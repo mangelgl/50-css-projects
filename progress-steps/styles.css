@@ -1,0 +1,111 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--line-border-fill: #3498db;
+	--line-border-empty: #e0e0e0;
+}
+
+body {
+	background-color: #f6f7fb;
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.container {
+	text-align: center;
+}
+
+.progress-container {
+	width: min(350px, 100vw);
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.progress-container::before {
+	content: '';
+	background-color: var(--line-border-empty);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 100%;
+	z-index: -1;
+}
+
+.circle {
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	color: #999999;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid var(--line-border-fill);
+	border-radius: 50px;
+	transition: 0.4s ease;
+}
+
+.circle:hover {
+	cursor: default;
+	user-select: none;
+}
+
+.circle:active {
+	border-color: var(--line-border-fill);
+}
+
+.progress {
+	background-color: var(--line-border-fill);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 0%;
+	z-index: -1;
+	transition: 0.4s ease;
+}
+
+.btn {
+	background-color: var(--line-border-fill);
+	padding: 8px 30px;
+	margin: 5px;
+	color: white;
+	border: 0;
+	border-radius: 6px;
+	font-size: 14px;
+	font-family: inherit;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn:disabled {
+	background-color: var(--line-border-empty);
+	cursor: not-allowed;
+}
